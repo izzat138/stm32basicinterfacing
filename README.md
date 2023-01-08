@@ -1,9 +1,9 @@
-# stm32helloworld
-This repository documents the details of the UART project on STM32F103C8T6 MCU together with the STM32CubeIDE, an open-source C/C++ development platform for STM32 microcontrollers and microprocessors.
+# stm32basicinterfacing
+This repository documents the details of the stm32basicinterfacing project on STM32F103C8T6 MCU together with the STM32CubeIDE, an open-source C/C++ development platform for STM32 microcontrollers and microprocessors.
 
-We are required to program an STM32 MCU using open-source STM32CubeIDE in C language to print the "Hello World" message and the value of the 4-bit DIP switch on the terminal once the switch value is changed. A C code is included in this repository for reference.
+We are required to program an STM32 MCU using open-source STM32CubeIDE in C language to print the sound intensity on the terminal. A C code is included in this repository for reference.
 
-stm32helloworld contains the project that uses pins GPIOB-PIN12, GPIOB-PIN13, GPIOB-PIN14 and GPIOB-PIN15 to read DIP switch input and GPIOA-PIN9 and GPIOA-PIN10 as UART interface. Also, this project uses GPIOD-PIN0 and GPIOD-PIN1 for teh RCC controller.
+stm32basicinterfacing contains the project that uses pins GPIOA-PIN7 as sound sensor analog input and GPIOA-PIN9 and GPIOA-PIN10 as UART interface. Also, this project uses GPIOD-PIN0 and GPIOD-PIN1 for the RCC controller. In addtion, this project uses ADC to convert the analog signal from the sound sensor to digital signal.
 
 
 
@@ -24,9 +24,10 @@ stm32helloworld contains the project that uses pins GPIOB-PIN12, GPIOB-PIN13, GP
 1. STM32F103C8T6 Board Blue Pill
 2. ST-Link V2 Programming Unit
 3. CH340 USB to TTL Converter UART Module 
-4. DIP switch - 1 
-5. 1k ohm resistors - 4
-6. 10k ohm resistors - 4
+5. KY-038 Sound Sensor
+6. DIP switch - 1 
+7. 1k ohm resistors - 4
+8. 10k ohm resistors - 4
 
 
 
@@ -85,7 +86,16 @@ stm32helloworld contains the project that uses pins GPIOB-PIN12, GPIOB-PIN13, GP
 <br/>
 
 
-7. Only a section of the generated code is modified. In this project, the executing loop is added with built-in functions to print "Hello World" and the value of the 4-bit DIP switch on the terminal once the switch value is changed.
+7. Right-click the Analog > ADC1 and click the checkbox for IN7
+
+![Semantic description of image](/image/pic13.png)
+
+
+<br/>
+<br/>
+
+
+8. Only a section of the generated code is modified. In this project, the executing loop is added with built-in functions to print "Hello World" and the value of the 4-bit DIP switch on the terminal once the switch value is changed.
 
 ![Semantic description of image](/image/pic4.png)
 
@@ -93,7 +103,7 @@ stm32helloworld contains the project that uses pins GPIOB-PIN12, GPIOB-PIN13, GP
 <br/>
 
 
-8. Under project properties(Right click project, select properties), select to convert builds to binary and hex files under MCU Post build outputs. Apply the changes.
+9. Under project properties(Right click project, select properties), select to convert builds to binary and hex files under MCU Post build outputs. Apply the changes.
 
 ![Semantic description of image](/image/pic6.png)
 
@@ -102,7 +112,7 @@ stm32helloworld contains the project that uses pins GPIOB-PIN12, GPIOB-PIN13, GP
 <br/>
 
 
-9. Start building the debug for the current project.
+10. Start building the debug for the current project.
 
 ![Semantic description of image](/image/pic5.png)
 
@@ -111,7 +121,7 @@ stm32helloworld contains the project that uses pins GPIOB-PIN12, GPIOB-PIN13, GP
 <br/>
 
 
-10. Connect the STM32 with all the components as shown below.
+11. Connect the STM32 with all the components as shown below.
 
 ![Semantic description of image](/image/schematic.png)
 
@@ -120,7 +130,7 @@ stm32helloworld contains the project that uses pins GPIOB-PIN12, GPIOB-PIN13, GP
 <br/>
 
 
-11. STM32 ST-LINK Utility is utilized to program the SM32F103C8T6 MCU through an ST-LINK V2. The generated binary/hex files are opened through this application.
+12. STM32 ST-LINK Utility is utilized to program the SM32F103C8T6 MCU through an ST-LINK V2. The generated binary/hex files are opened through this application.
 
 ![Semantic description of image](/image/pic7.png)
 
@@ -129,7 +139,7 @@ stm32helloworld contains the project that uses pins GPIOB-PIN12, GPIOB-PIN13, GP
 <br/>
 
 
-12. Connect the STM32 MCU through the USB port with the ST-LINK V2. Then, connect with the MCU in the utility and start to program it.
+13. Connect the STM32 MCU through the USB port with the ST-LINK V2. Then, connect with the MCU in the utility and start to program it.
 
 Note: Move the BOOT jumper to the right to enable the microcontroller to go into programming mode.
 
@@ -140,7 +150,7 @@ Note: Move the BOOT jumper to the right to enable the microcontroller to go into
 <br/>
 
 
-13. Use the CH340 USB to TTL Converter to connect the STM32 MCU through the USB port.
+14. Use the CH340 USB to TTL Converter to connect the STM32 MCU through the USB port.
 
 Note: Move the BOOT jumper to the left to enable the microcontroller to go into normal mode.
 
@@ -149,7 +159,7 @@ Note: Move the BOOT jumper to the left to enable the microcontroller to go into 
 <br/>
 
 
-14. Open the device manager to check the COM port for the CH340 USB to TTL Converter. In our case, it is COM4.
+15. Open the device manager to check the COM port for the CH340 USB to TTL Converter. In our case, it is COM4.
 
 ![Semantic description of image](/image/pic12.png)
 
@@ -157,7 +167,7 @@ Note: Move the BOOT jumper to the left to enable the microcontroller to go into 
 <br/>
 
 
-15. Open the Putty software and set the correct speed and COM port and then press Open to establish a connection. The message send from the STM32 MCU will be displayed throught the terminal.
+16. Open the Putty software and set the correct speed and COM port and then press Open to establish a connection. The message send from the STM32 MCU will be displayed throught the terminal.
 
 
 <br/>
@@ -166,11 +176,12 @@ Note: Move the BOOT jumper to the left to enable the microcontroller to go into 
 
 # Reflections
 
-This STM32 project creation facilitates us in understanding the UART interface, especially on how to implement it on the STM32. The UART interface transmits data asynchronously and does not use a clock signal to synchronize the transmitter and receiver devices. As a result, the UART interface does not require the clock pin and only 2 pins are required for the transmitter and receiver. This project requires us to use the external UART module in which we are using CH340 USB to TTL Converter since the STM32 board does not have an onboard converter.
+This STM32 project creation facilitates us in understanding the analog-to-digital converter (ADC) on STM32. An ADC converts an analog voltage to a digital value that a
+microcontroller can use. In this project, we use the ADC to convert the analog signal from KY-038 Sound Sensor to 12 bit digital signal. 
 
 
 
 
 # References
-1. STM32 Blue Pill UART Communication Tutorial with CubeIDE and HAL Libraries: https://microcontrollerslab.com/stm32-blue-pill-uart-tutorial-polling-method/*
+1. STM32CubeIDE Potentiometer ADC with STM32F103C8T6: https://youtu.be/oNiz5md51G4*
 
