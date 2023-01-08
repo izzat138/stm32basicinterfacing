@@ -95,9 +95,9 @@ stm32basicinterfacing contains the project that uses pin GPIOA-PIN7 to input the
 <br/>
 
 
-8. Only a section of the generated code is modified. In this project, the executing loop is added with built-in functions to print "Hello World" and the value of the 4-bit DIP switch on the terminal once the switch value is changed.
+8. Only a section of the generated code is modified. In this project, the executing loop is added with built-in functions to print the sound intensity on the terminal.
 
-![Semantic description of image](/image/pic4.png)
+![Semantic description of image](/image/pic14.png)
 
 <br/>
 <br/>
