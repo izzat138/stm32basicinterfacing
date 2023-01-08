@@ -3,7 +3,7 @@ This repository documents the details of the stm32basicinterfacing project on ST
 
 We are required to program an STM32 MCU using open-source STM32CubeIDE in C language to print the sound intensity on the terminal. A C code is included in this repository for reference.
 
-stm32basicinterfacing contains the project that uses pins GPIOA-PIN7 as sound sensor analog input and GPIOA-PIN9 and GPIOA-PIN10 as UART interface. Also, this project uses GPIOD-PIN0 and GPIOD-PIN1 for the RCC controller. In addtion, this project uses ADC to convert the analog signal from the sound sensor to digital signal.
+stm32basicinterfacing contains the project that uses pin GPIOA-PIN7 to input the sound sensor analog signal to the ADC and GPIOA-PIN9 and GPIOA-PIN10 as UART interface. Also, this project uses GPIOD-PIN0 and GPIOD-PIN1 for the RCC controller. In addtion, this project uses ADC to convert the analog signal from the sound sensor to digital signal.
 
 
 
@@ -86,7 +86,7 @@ stm32basicinterfacing contains the project that uses pins GPIOA-PIN7 as sound se
 <br/>
 
 
-7. Right-click the Analog > ADC1 and click the checkbox for IN7
+7. Right-click the Analog > ADC1 and click the checkbox for IN7.
 
 ![Semantic description of image](/image/pic13.png)
 
@@ -177,7 +177,7 @@ Note: Move the BOOT jumper to the left to enable the microcontroller to go into 
 # Reflections
 
 This STM32 project creation facilitates us in understanding the analog-to-digital converter (ADC) on STM32. An ADC converts an analog voltage to a digital value that a
-microcontroller can use. In this project, we use the ADC to convert the analog signal from KY-038 Sound Sensor to 12 bit digital signal. 
+microcontroller can use. In this project, we use the ADC to convert the analog signal from KY-038 Sound Sensor to 12-bit digital signal. 
 
 
 
