@@ -174,6 +174,17 @@ Note: Move the BOOT jumper to the left to enable the microcontroller to go into 
 <br/>
 
 
+# Project Demo
+
+https://user-images.githubusercontent.com/106621749/211195423-41841fcc-e696-4515-9111-a150be59eaf0.mp4
+
+*Youtube URL: https://youtu.be/MvJmXh9NeRQ*
+
+
+<br/>
+<br/>
+
+
 # Reflections
 
 This STM32 project creation facilitates us in understanding the analog-to-digital converter (ADC) on STM32. An ADC converts an analog voltage to a digital value that a
