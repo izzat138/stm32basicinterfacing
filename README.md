@@ -25,9 +25,6 @@ stm32basicinterfacing contains the project that uses pin GPIOA-PIN7 to input the
 2. ST-Link V2 Programming Unit
 3. CH340 USB to TTL Converter UART Module 
 5. KY-038 Sound Sensor
-6. DIP switch - 1 
-7. 1k ohm resistors - 4
-8. 10k ohm resistors - 4
 
 
 
