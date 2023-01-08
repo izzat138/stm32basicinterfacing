@@ -123,7 +123,7 @@ stm32basicinterfacing contains the project that uses pin GPIOA-PIN7 to input the
 
 11. Connect the STM32 with all the components as shown below.
 
-![Semantic description of image](/image/schematic.png)
+![Semantic description of image](/image/pic15.png)
 
 
 <br/>
